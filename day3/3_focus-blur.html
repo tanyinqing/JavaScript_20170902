@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function myfunction1(x) {
+            document.getElementById(x).style.background = "yellow"
+        }
+        function myfunction2(x) {
+            document.getElementById(x).style.background = 'white'
+
+        }
+    </script>
+</head>
+<body>
+
+First name: <input  onfocus="myfunction1(this.id)" onblur="myfunction2(this.id)" id="fname"/> <br>
+Last name: <input  onfocus="myfunction1(this.id)" id="lname">
+
+
+</body>
+</html>
