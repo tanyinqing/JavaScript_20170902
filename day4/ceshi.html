@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function showTime() {
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+            m=checkTime(m);
+            s=checkTime(s);
+
+        }
+        function checkTime(i) {
+          if(i<10){
+              return '0'+i;
+          }
+        }
+    </script>
+</head>
+<body onload="showTime()">
+<div id="txt"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var dob='1990-1-1';
+        var year=80;
+        var birthday=new Date(dob);
+        var deathday=new Date(birthday.setFullYear(birthday.getFullYear()+year));
+        function show() {
+            var today=new Date();
+            var seconds=Math.round((deathday.getTime()-today.getTime())/1000);
+            document.getElementById('txt').innerHTML=seconds;
+            setTimeout('show()',900);
+        }
+    </script>
+</head>
+<body onload="show()">
+<!--一个人1990年出生，加入他能或80岁，问他还能活多少秒-->
+your have <span id="txt"></span> 秒就要死去了
+</body>
+</html>
