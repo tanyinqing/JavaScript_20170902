@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    RegExp
+    Regular Expression
+    正则表达式
+
+    Email
+    asdf@asdf.com
+</pre>
+<script>
+    var pattern  = /e/;
+    var yin = new RegExp('e');
+   // console.log(pattern.test('hello world'));
+    //console.log(pattern.exec("hello world"));
+
+    pattern.compile(/e/i);
+    //console.log(pattern.exec('hEllo'));// i代表不区分大小写
+
+    pattern.compile(/e/gi);// g 代表全局查找
+    do {
+    result=pattern.exec('Hello English');
+    //console.log(result);
+    }while (result!=null)
+
+    pattern.compile(/[^a-zA-Z0-9]/g)//	查找任何不在方括号之间的字符。方括号
+  //  方括号用于查找某个范围内的字符：
+  //  console.log('789Hello,World! 123'.match(pattern));
+
+    pattern.compile(/(red|blue)/g);
+    //console.log("asdbluefread".match(pattern));//	查找任何指定的选项
+
+    pattern.compile(/[A-z]/g);//A 65 z 122 将按ascii码的顺序匹配
+  //  console.log('Hello,World![]^'.match(pattern));
+
+    pattern.compile(/./g);//	查找单个字符，除了换行和行结束符。
+   // console.log('Hello, World.'.match(pattern));
+
+    pattern.compile(/\D/g);
+    console.log("123test...".match(pattern));//查找非数字字符。
+    pattern.compile(/[\u4E00-\u9FBB]/g)//中文ascii表的顺序
+    console.log('一中文颠倒Hello, World1'.match(pattern));
+</script>
+</body>
+</html>
