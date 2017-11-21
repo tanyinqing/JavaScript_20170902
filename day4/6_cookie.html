@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <!-- ECMA 5 ECMA 6
+   6_cookie.html?_ijt=1kvbdkclvjaefu8lf1jsug6iv3:14
+   这个就是cookie   username=tan; Hm_lvt_e19a8b00cf63f716d774540875007664=1507860460;
+        -->
+    <script type="text/javascript">
+        function getCookie(c_name) { //username这个是传过来的参数  从cookoe中解析出用户名
+            if (document.cookie.length > 0) {
+                console.log('这个就是cookie  '+document.cookie+"/n");
+                c_start = document.cookie.indexOf(c_name + "=")
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1
+                    c_end = document.cookie.indexOf(";", c_start)
+                    if (c_end == -1) c_end = document.cookie.length
+                    return unescape(document.cookie.substring(c_start, c_end))
+                }
+            }
+            return ""
+        }
+        function setCookie(c_name, value, expiredays) {
+            var exdate = new Date()
+            exdate.setDate(exdate.getDate() + expiredays)
+            document.cookie = c_name + "=" + escape(value) +
+                ((expiredays == null) ? "" : "; expires=" + exdate.toGMTString())
+        }
+        function checkCookie() {
+            username = getCookie('username'); // getCookie
+            if (username != null && username != "") {
+                alert('Welcome again ' + username + '!')
+            }
+            else {
+                username = prompt('Please enter your name:', "")
+                if (username != null && username != "") {
+                    setCookie('username', username, 365); // setCookie
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="checkCookie()">
+<!--JavaScript 权威指南
+或高级程序设计
+每个网站是否只有一个cookie？
+如何定期清除呢？清除的思路是什么？
+ECMA 5版本-->
+</body>
+</html>
